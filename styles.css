@@ -1,0 +1,157 @@
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  min-width: 375px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 5em auto 0;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0.3em 0;
+}
+
+h1,
+p {
+  color: var(--Grayish-Blue);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+h2,
+h3 {
+  color: var(--Very-Dark-Blue);
+}
+
+.intro {
+  font-size: 1.3rem;
+  padding: 0 2em;
+}
+
+main {
+  margin: 3em 10em;
+}
+
+.sub-blocks {
+  box-shadow: 0 10px 20px 0px var(--Grayish-Blue);
+  padding: 2em 0 1em 2em;
+  border-radius: 10px;
+  margin: 2em 0;
+  width: 20em;
+  height: 13em;
+  position: relative;
+  border-top: 5px solid;
+}
+
+.sub-blocks p {
+  line-height: 1.5;
+}
+
+.sub-blocks img {
+  position: absolute;
+  top: 160px;
+  left: 250px;
+}
+
+.supervisor {
+  color: var(--Cyan);
+}
+
+.team-builder {
+  color: var(--Red);
+}
+
+.karma {
+  color: var(--Orange);
+}
+
+.calculator {
+  color: var(--Blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    width: 1440px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "... team-builder ..."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      "... karma ...";
+    gap: 2em;
+    min-height: 100vh;
+    margin: 3em;
+  }
+
+  .supervisor {
+    grid-area: supervisor;
+  }
+
+  .team-builder {
+    grid-area: team-builder;
+  }
+
+  .karma {
+    grid-area: karma;
+  }
+
+  .calculator {
+    grid-area: calculator;
+  }
+
+  .intro {
+    width: 30em;
+  }
+
+  .sub-blocks {
+    margin: 0;
+    border-top: 0;
+    border-left: 5px solid;
+    border-bottom: 5px solid;
+  }
+}
